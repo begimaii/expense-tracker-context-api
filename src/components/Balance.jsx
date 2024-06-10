@@ -1,4 +1,4 @@
-import { getSign } from "../utils/helpers";
+import { getSignWithAmount } from "../utils/helpers";
 
 export const Balance = ({ transactions }) => {
   const amounts = transactions.map((transaction) => transaction.amount);
@@ -12,9 +12,7 @@ export const Balance = ({ transactions }) => {
   return (
     <>
       <h4>Your Balance</h4>
-      <h1 style={customStyle}>
-        {getSign(total)}${Math.abs(total)}
-      </h1>
+      <h1 style={customStyle}>{getSignWithAmount(total)}</h1>
     </>
   );
 };
