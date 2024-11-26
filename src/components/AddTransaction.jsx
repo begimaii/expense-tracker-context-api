@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { MyContext } from "./GlobalProviderComponent";
+import { useContext } from "react";
 
-export const AddTransaction = ({ addTransaction }) => {
+export const AddTransaction = () => {
+  const { addTransaction } = useContext(MyContext);
   const [text, setText] = useState("");
   const [amount, setAmount] = useState("");
 

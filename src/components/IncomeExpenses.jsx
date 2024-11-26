@@ -1,4 +1,8 @@
-export const IncomeExpenses = ({ transactions }) => {
+import { useContext } from "react";
+import { MyContext } from "./GlobalProviderComponent";
+
+export const IncomeExpenses = () => {
+  const { transactions } = useContext(MyContext);
   const amounts = transactions.map((transaction) => transaction.amount);
 
   const totalIncome = amounts

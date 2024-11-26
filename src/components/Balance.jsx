@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { getSignWithAmount } from "../utils/helpers";
+import { MyContext } from "./GlobalProviderComponent";
 
-export const Balance = ({ transactions }) => {
+export const Balance = () => {
+  const { transactions } = useContext(MyContext);
   const amounts = transactions.map((transaction) => transaction.amount);
 
   const total = amounts.reduce((acc, item) => (acc += item), 0);
